@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.net.burgesslee.dao.DmOrDayNightProductDao" >
+  <resultMap id="BaseResultMap" type="com.net.burgesslee.entity.DmOrDayNightProduct" >
+    <result column="UNIT" property="unit" jdbcType="VARCHAR" />
+    <result column="PROJECT" property="project" jdbcType="VARCHAR" />
+    <result column="DAY_WORK" property="dayWork" jdbcType="VARCHAR" />
+    <result column="NIGHT_WORK" property="nightWork" jdbcType="VARCHAR" />
+    <result column="DAY_NIGHT_TOTAL_WORK" property="dayNightTotalWork" jdbcType="VARCHAR" />
+    <result column="MONTH_CUMULATION_PRODUCTION" property="monthCumulationProduction" jdbcType="VARCHAR" />
+    <result column="QOQ" property="qoq" jdbcType="VARCHAR" />
+    <result column="YOY" property="yoy" jdbcType="VARCHAR" />
+    <result column="DESCRIBE" property="describe" jdbcType="VARCHAR" />
+    <result column="SORT" property="sort" jdbcType="DECIMAL" />
+    <result column="REPORT_TIME" property="reportTime" jdbcType="VARCHAR" />
+    <result column="SERIAL_NUMBER" property="serialNumber" jdbcType="DECIMAL" />
+    <result column="PROGRESS_COMPLETION" property="progressCompletion" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <insert id="insert" parameterType="com.net.burgesslee.entity.DmOrDayNightProduct" >
+    insert into DM_OR_DAY_NIGHT_PRODUCT (UNIT, PROJECT, DAY_WORK, 
+      NIGHT_WORK, DAY_NIGHT_TOTAL_WORK, MONTH_CUMULATION_PRODUCTION, 
+      QOQ, YOY, DESCRIBE, 
+      SORT, REPORT_TIME, SERIAL_NUMBER, 
+      PROGRESS_COMPLETION)
+    values (#{unit,jdbcType=VARCHAR}, #{project,jdbcType=VARCHAR}, #{dayWork,jdbcType=VARCHAR}, 
+      #{nightWork,jdbcType=VARCHAR}, #{dayNightTotalWork,jdbcType=VARCHAR}, #{monthCumulationProduction,jdbcType=VARCHAR}, 
+      #{qoq,jdbcType=VARCHAR}, #{yoy,jdbcType=VARCHAR}, #{describe,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=DECIMAL}, #{reportTime,jdbcType=VARCHAR}, #{serialNumber,jdbcType=DECIMAL}, 
+      #{progressCompletion,jdbcType=VARCHAR})
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.net.burgesslee.entity.DmOrDayNightProduct" >
+    insert into DM_OR_DAY_NIGHT_PRODUCT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="unit != null" >
+        UNIT,
+      </if>
+      <if test="project != null" >
+        PROJECT,
+      </if>
+      <if test="dayWork != null" >
+        DAY_WORK,
+      </if>
+      <if test="nightWork != null" >
+        NIGHT_WORK,
+      </if>
+      <if test="dayNightTotalWork != null" >
+        DAY_NIGHT_TOTAL_WORK,
+      </if>
+      <if test="monthCumulationProduction != null" >
+        MONTH_CUMULATION_PRODUCTION,
+      </if>
+      <if test="qoq != null" >
+        QOQ,
+      </if>
+      <if test="yoy != null" >
+        YOY,
+      </if>
+      <if test="describe != null" >
+        DESCRIBE,
+      </if>
+      <if test="sort != null" >
+        SORT,
+      </if>
+      <if test="reportTime != null" >
+        REPORT_TIME,
+      </if>
+      <if test="serialNumber != null" >
+        SERIAL_NUMBER,
+      </if>
+      <if test="progressCompletion != null" >
+        PROGRESS_COMPLETION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="project != null" >
+        #{project,jdbcType=VARCHAR},
+      </if>
+      <if test="dayWork != null" >
+        #{dayWork,jdbcType=VARCHAR},
+      </if>
+      <if test="nightWork != null" >
+        #{nightWork,jdbcType=VARCHAR},
+      </if>
+      <if test="dayNightTotalWork != null" >
+        #{dayNightTotalWork,jdbcType=VARCHAR},
+      </if>
+      <if test="monthCumulationProduction != null" >
+        #{monthCumulationProduction,jdbcType=VARCHAR},
+      </if>
+      <if test="qoq != null" >
+        #{qoq,jdbcType=VARCHAR},
+      </if>
+      <if test="yoy != null" >
+        #{yoy,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null" >
+        #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=DECIMAL},
+      </if>
+      <if test="reportTime != null" >
+        #{reportTime,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNumber != null" >
+        #{serialNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="progressCompletion != null" >
+        #{progressCompletion,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+</mapper>
